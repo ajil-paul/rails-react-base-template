@@ -1,0 +1,1 @@
+export const MAXIMUM_OFFLINE_DURATION = 10000;
