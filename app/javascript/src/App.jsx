@@ -1,13 +1,13 @@
 import React from "react";
 
-import { useTranslation } from "react-i18next";
+import { QueryClientProvider } from "@tanstack/react-query";
+import Routes from "components/Routes";
+import { queryClient } from "utils/query/queryClient";
 
-const App = () => {
-  const { t } = useTranslation();
-
-  return (
-    <div className=" text-xl font-semibold text-blue-800">{t("welcome")}</div>
-  );
-};
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <Routes />
+  </QueryClientProvider>
+);
 
 export default App;

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "paths": {
+      "Commons/*": ["components/Commons/*"],
+      "reactQuery/*": ["hooks/reactQuery/*"],
+      "neetocist": ["../../../node_modules/@bigbinary/neeto-cist"],
+      "neetocist/*": ["../../../node_modules/@bigbinary/neeto-cist/*"]
+    }
+  }
+}
