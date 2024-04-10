@@ -20,11 +20,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_08_083158) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "avatar_url"
+    t.string "phone_number"
+    t.string "language"
     t.string "provider"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "otp"
+    t.integer "otp_attempts"
+    t.datetime "otp_sent_at"
+    t.boolean "verified", default: false
+    t.boolean "profile_completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

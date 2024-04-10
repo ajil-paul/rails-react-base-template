@@ -28,4 +28,9 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  sessions:
+    invalid_login: "Invalid email or password."
+    invalid_otp: "Invalid OTP."
+  user:
+    already_exists: "User already exists. Please login"
+    not_found: "User not found. Please sign up."

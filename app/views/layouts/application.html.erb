@@ -10,6 +10,11 @@
     <%= vite_client_tag %>
     <%= vite_react_refresh_tag %>
     <%= vite_javascript_tag "application" %>
+    <% if current_user %>
+      <%= javascript_tag do %>
+        window.userDetails = <%= user_details %>
+      <% end %>
+    <% end %>
   </head>
 
   <body>

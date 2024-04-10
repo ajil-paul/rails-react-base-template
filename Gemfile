@@ -42,6 +42,8 @@ gem "omniauth-rails_csrf_protection"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "pundit"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
@@ -51,6 +53,12 @@ group :development, :test do
   gem "rubocop-rails"
 
   gem "pry-byebug"
+
+  # For testing the mail locally
+  gem "letter_opener"
+
+  # For testing the emails in the browser, works with `letter_opener`
+  gem "letter_opener_web"
 end
 
 group :development do
