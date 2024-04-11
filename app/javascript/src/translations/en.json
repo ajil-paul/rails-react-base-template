@@ -1,3 +1,37 @@
 {
-  "welcome": "Welcome to the Rails - Vite - React App"
+  "account": {
+    "alreadyHaveAccount": "Already have an account?",
+    "attemptsLeft": "{{count}} attempts left.",
+    "email": "Email",
+    "emailAddress": "Email Address",
+    "confirmPassword": "Confirm password",
+    "createAccount": "Create an account",
+    "dontHaveAccount": "Don't have an account?",
+    "firstName": "First Name",
+    "forgotPassword": "Forgot password?",
+    "lastName": "Last Name",
+    "language": "Language",
+    "loginToYourAccount": "Login to your account",
+    "orContinueWith": "Or continue with",
+    "otpVerification": "OTP Verification",
+    "password": "Password",
+    "phoneNumber": "Phone Number",
+    "rememberMe": "Remember me",
+    "signIn": "Sign In",
+    "signUp": "Sign up",
+    "signInTitle": "Sign in to your account"
+  },
+  "commons": {
+    "complete": "Complete"
+  },
+  "messages": {
+    "otpSend": "Enter the 6-digit verification code that was sent to your email address."
+  },
+  "validations": {
+    "invalid": "Invalid {{what}}",
+    "minPassword": "Password must be at least 6 characters long",
+    "passwordPattern": "Password must contain at least one number, one uppercase and one lowercase letter",
+    "passwordNotMatch": "Passwords does not match",
+    "required": "{{what}} is required"
+  }
 }

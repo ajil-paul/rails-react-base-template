@@ -6,7 +6,7 @@ module OtpVerifiable
   MAX_OTP_ATTEMPTS = 5
 
   included do
-    after_create :sent_otp
+    after_create :sent_otp, unless: -> { provider.present? }
 
     def sent_otp
       return unless otp_sendable?

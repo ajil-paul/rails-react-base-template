@@ -17,6 +17,8 @@ module DeviseAuthenticatable
         user.last_name = info.info.last_name
         user.avatar_url = info.info.image
         user.password = Devise.friendly_token[0, 20]
+        user.provider = :google
+        user.verified = true
       end
     end
   end

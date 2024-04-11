@@ -32,3 +32,6 @@ console.log(
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 import "../src/index";
+import { initializeAxios } from "apis/axios";
+
+initializeAxios();
