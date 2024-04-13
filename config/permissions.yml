@@ -1,0 +1,13 @@
+permissions:
+  - name: "member.view"
+    description: "View members"
+    category: "Members"
+  - name: "member.manage"
+    description: "Manage members"
+    category: "Members"
+  - name: "role.view"
+    description: "View roles"
+    category: "Roles"
+  - name: "role.manage"
+    description: "Manage roles"
+    category: "Roles"

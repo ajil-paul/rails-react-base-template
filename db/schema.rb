@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_13_101149) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_13_104934) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -59,10 +59,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_101149) do
     t.boolean "profile_completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
   add_foreign_key "roles_permissions", "permissions"
   add_foreign_key "roles_permissions", "roles"
+  add_foreign_key "users", "roles"
 end

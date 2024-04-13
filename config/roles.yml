@@ -1,0 +1,10 @@
+roles:
+  - name: Admin
+    permissions: ["member.view", "member.manage", "role.view", "role.manage"]
+    kind: "system"
+  - name: Member
+    permissions: ["member.view"]
+    kind: "system"
+  - name: Standard
+    permissions: []
+    kind: "system"
