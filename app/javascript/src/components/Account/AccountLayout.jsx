@@ -5,7 +5,7 @@ import classnames from "classnames";
 const AccountLayout = ({ children, title = "", className = "" }) => (
   <div
     className={classnames(
-      "flex flex-col justify-center flex-1 py-8 sm:px-6 lg:px-8 bg-gray-50 min-h-screen",
+      "flex flex-col justify-center flex-1 py-8 sm:px-6 lg:px-8 bg-gray-50 dark:*: min-h-screen",
       className
     )}
   >

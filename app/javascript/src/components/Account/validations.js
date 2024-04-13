@@ -40,7 +40,13 @@ export const SIGNUP_FORM_RULES = {
 };
 
 export const LOGIN_FORM_RULES = {
-  email: [{ required: true, message: "" }],
+  email: [
+    { required: true, message: "" },
+    {
+      type: "email",
+      message: t("validations.invalid", { what: t("account.email") }),
+    },
+  ],
   password: [{ required: true, message: "" }],
 };
 

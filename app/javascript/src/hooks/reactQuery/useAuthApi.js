@@ -11,4 +11,10 @@ export const useResendOtp = () =>
 
 export const useLogin = () => useMutation({ mutationFn: authApi.login });
 
+export const useLogout = () =>
+  useMutation({
+    mutationFn: authApi.logout,
+    onSuccess: () => window.location.reload(),
+  });
+
 export const useUpdateUser = () => useMutation({ mutationFn: authApi.update });

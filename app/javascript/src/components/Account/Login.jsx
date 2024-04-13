@@ -33,7 +33,7 @@ const Login = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
           <Form
-            autoComplete
+            autoComplete="true"
             className="space-y-6"
             initialValues={INITIAL_LOGIN_FORM}
             layout="vertical"
@@ -44,7 +44,7 @@ const Login = () => {
               name="email"
               rules={LOGIN_FORM_RULES.email}
             >
-              <Input autoComplete="email" type="email" />
+              <Input />
             </Form.Item>
             <Form.Item
               label={t("account.password")}

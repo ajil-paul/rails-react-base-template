@@ -19,7 +19,7 @@ const SignupForm = ({ onFinish }) => {
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
           <Form
-            autoComplete
+            autoComplete="true"
             initialValues={INITIAL_SIGNUP_FORM}
             layout="vertical"
             onFinish={onFinish}

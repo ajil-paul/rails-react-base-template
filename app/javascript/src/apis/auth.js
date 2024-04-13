@@ -10,6 +10,8 @@ const resendOtp = user => axios.post("users/resend_otp", { user });
 
 const login = user => axios.post("session", { user });
 
-const authApi = { signUp, verifyOtp, resendOtp, login, update };
+const logout = () => axios.delete("session");
+
+const authApi = { signUp, verifyOtp, resendOtp, login, update, logout };
 
 export { authApi };
