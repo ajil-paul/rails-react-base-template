@@ -21,6 +21,9 @@
     "signUp": "Sign up",
     "signInTitle": "Sign in to your account"
   },
+  "actions": {
+    "search": "Search"
+  },
   "commons": {
     "complete": "Complete"
   },

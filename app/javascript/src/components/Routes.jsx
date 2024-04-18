@@ -2,13 +2,17 @@ import routes from "constants/routes";
 
 import React from "react";
 
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 
 import Login from "./Account/Login";
 import SetupProfile from "./Account/SetupProfile";
 import Signup from "./Account/Signup";
-import ProtectedRoute from "./Common/ProtectedRoute";
-import Home from "./Home";
+import Dashboard from "./Dashbord";
+import Users from "./Users";
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -16,8 +20,11 @@ const Routes = () => {
     { path: routes.signUp, Component: Signup },
     { path: routes.setupProfile, Component: SetupProfile },
     {
-      Component: ProtectedRoute,
-      children: [{ path: routes.home, Component: Home }],
+      Component: Dashboard,
+      children: [
+        { path: routes.users, Component: Users },
+        { path: routes.home, element: <Navigate to={routes.users} /> },
+      ],
     },
   ]);
 

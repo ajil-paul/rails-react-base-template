@@ -17,4 +17,5 @@ export const useLogout = () =>
     onSuccess: () => window.location.reload(),
   });
 
-export const useUpdateUser = () => useMutation({ mutationFn: authApi.update });
+export const useUpdateUser = () =>
+  useMutation({ mutationFn: authApi.updateProfile });
