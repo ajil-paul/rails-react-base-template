@@ -19,6 +19,7 @@ module DeviseAuthenticatable
         user.password = Devise.friendly_token[0, 20]
         user.provider = :google
         user.verified = true
+        user.role = Role.standard
       end
     end
   end

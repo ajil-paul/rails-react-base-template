@@ -1,10 +1,14 @@
 roles:
   - name: Admin
-    permissions: ["member.view", "member.manage", "role.view", "role.manage"]
+    permissions:
+      ["members.view", "members.manage", "roles.view", "roles.manage"]
     kind: "system"
+    description: "Admins can manage all members and roles"
   - name: Member
-    permissions: ["member.view"]
-    kind: "system"
+    permissions: ["members.view"]
+    kind: "custom"
+    description: "Members can view members"
   - name: Standard
     permissions: []
     kind: "system"
+    description: "Standard users have no special permissions"

@@ -9,4 +9,8 @@ class Role < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :kind, presence: true
+
+  def self.standard
+    Role.find_by!(kind: "system", name: "Standard")
+  end
 end

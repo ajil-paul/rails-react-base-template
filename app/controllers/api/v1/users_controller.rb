@@ -5,7 +5,11 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   before_action :load_user!, only: %i[validate_otp resend_otp]
 
-  def create
+  def index
+    @users = policy_scope(User.includes(:role))
+  end
+
+  def register
     user = User.find_by(email: user_params[:email])
     if user.present?
       return render_error(t("user.already_exists")) if user.verified?
@@ -18,7 +22,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     render_success
   end
 
-  def update
+  def update_profile
     current_user.update!(profile_params)
     render_success
   end
@@ -42,7 +46,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :otp)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :otp).merge(role: Role.standard)
     end
 
     def profile_params

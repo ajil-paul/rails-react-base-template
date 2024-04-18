@@ -28,9 +28,12 @@
 #       enabled: "ON"
 
 en:
-  sessions:
+  session:
     invalid_login: "Invalid email or password."
     invalid_otp: "Invalid OTP."
   user:
     already_exists: "User already exists. Please login"
     not_found: "User not found. Please sign up."
+  authorization:
+    denied: "You are not authorized to perform this action."
+  generic_error: "Something went wrong. Please try again later."
