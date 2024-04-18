@@ -2,14 +2,11 @@
   "account": {
     "alreadyHaveAccount": "Already have an account?",
     "attemptsLeft": "{{count}} attempts left.",
-    "email": "Email",
     "emailAddress": "Email Address",
     "confirmPassword": "Confirm password",
     "createAccount": "Create an account",
     "dontHaveAccount": "Don't have an account?",
-    "firstName": "First Name",
     "forgotPassword": "Forgot password?",
-    "lastName": "Last Name",
     "language": "Language",
     "loginToYourAccount": "Login to your account",
     "orContinueWith": "Or continue with",
@@ -27,8 +24,17 @@
   "commons": {
     "complete": "Complete"
   },
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "role": "Role"
+  },
   "messages": {
     "otpSend": "Enter the 6-digit verification code that was sent to your email address."
+  },
+  "titles": {
+    "users": "Users"
   },
   "validations": {
     "invalid": "Invalid {{what}}",

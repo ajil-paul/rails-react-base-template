@@ -20,11 +20,11 @@ const Header = ({ title = "", breadcrumbs = [], leftAction, rightAction }) => {
   const breadcrumbList = HOME_BREADCRUMB.concat(breadcrumbs);
 
   return (
-    <AntdHeader className="bg-white mb-0.5 px-6 py-2 h-auto">
+    <AntdHeader className="h-auto px-6 py-6 bg-white">
       {breadcrumbList.length > 1 && <Breadcrumb items={breadcrumbList} />}
       <div className="flex items-center justify-between w-full">
         <div className="flex gap-x-2">
-          <Typography.Title className="p-0 m-0" level={3}>
+          <Typography.Title className="p-0 pl-8 m-0" level={3}>
             {title}
           </Typography.Title>
           {leftAction}

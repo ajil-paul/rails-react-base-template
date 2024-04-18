@@ -57,7 +57,7 @@ const SetupProfile = () => {
           <div className="grid grid-cols-1 gap-x-6 sm:grid-cols-6">
             <Form.Item
               className="sm:col-span-3"
-              label={t("account.firstName")}
+              label={t("fields.firstName")}
               name="firstName"
               rules={PROFILE_FORM_RULES.firstName}
             >
@@ -65,7 +65,7 @@ const SetupProfile = () => {
             </Form.Item>
             <Form.Item
               className="sm:col-span-3"
-              label={t("account.lastName")}
+              label={t("fields.lastName")}
               name="lastName"
               rules={PROFILE_FORM_RULES.lastName}
             >

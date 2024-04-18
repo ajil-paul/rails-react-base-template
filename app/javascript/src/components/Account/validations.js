@@ -6,7 +6,7 @@ export const SIGNUP_FORM_RULES = {
   email: [
     {
       required: true,
-      message: t("validations.required", { what: t("account.email") }),
+      message: t("validations.required", { what: t("fields.email") }),
     },
   ],
   password: [
@@ -44,7 +44,7 @@ export const LOGIN_FORM_RULES = {
     { required: true, message: "" },
     {
       type: "email",
-      message: t("validations.invalid", { what: t("account.email") }),
+      message: t("validations.invalid", { what: t("fields.email") }),
     },
   ],
   password: [{ required: true, message: "" }],
@@ -54,13 +54,13 @@ export const PROFILE_FORM_RULES = {
   firstName: [
     {
       required: true,
-      message: t("validations.required", { what: t("account.firstName") }),
+      message: t("validations.required", { what: t("fields.firstName") }),
     },
   ],
   lastName: [
     {
       required: true,
-      message: t("validations.required", { what: t("account.lastName") }),
+      message: t("validations.required", { what: t("fields.lastName") }),
     },
   ],
   language: [
