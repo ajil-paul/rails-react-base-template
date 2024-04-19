@@ -3,6 +3,7 @@ import React from "react";
 import { Layout } from "antd";
 import Container from "components/Common/Container";
 import Header from "components/Common/Header";
+import PageLoader from "components/Common/PageLoader";
 import { useTranslation } from "react-i18next";
 import { useFetchUsers } from "reactQuery/userUsersApi";
 
@@ -10,13 +11,15 @@ import Table from "./Table";
 
 const Users = () => {
   const { t } = useTranslation();
-  const { data: users = [] } = useFetchUsers();
+  const { data: users = [], isLoading, isFetching } = useFetchUsers();
+
+  if (isLoading) return <PageLoader />;
 
   return (
     <Layout>
       <Header title={t("titles.users")} />
       <Container>
-        <Table rowData={users} />
+        <Table loading={isFetching} rowData={users} />
       </Container>
     </Layout>
   );

@@ -1,8 +1,12 @@
 import { t } from "i18next";
 
 export const buildColumns = () => [
-  { title: t("fields.firstName"), dataIndex: "firstName" },
-  { title: t("fields.lastName"), dataIndex: "lastName" },
-  { title: t("fields.email"), dataIndex: "email" },
-  { title: t("fields.role"), dataIndex: "role" },
+  {
+    title: t("fields.name"),
+    dataIndex: "firstName",
+    key: "firstName",
+    render: (_, { firstName, lastName }) => `${firstName} ${lastName}`,
+  },
+  { title: t("fields.email"), dataIndex: "email", key: "email" },
+  { title: t("fields.role"), dataIndex: "role", key: "role" },
 ];

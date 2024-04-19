@@ -1,5 +1,6 @@
 {
   "account": {
+    "account": "Account",
     "alreadyHaveAccount": "Already have an account?",
     "attemptsLeft": "{{count}} attempts left.",
     "emailAddress": "Email Address",
@@ -9,6 +10,7 @@
     "forgotPassword": "Forgot password?",
     "language": "Language",
     "loginToYourAccount": "Login to your account",
+    "logout": "Logout",
     "orContinueWith": "Or continue with",
     "otpVerification": "OTP Verification",
     "password": "Password",
@@ -25,9 +27,10 @@
     "complete": "Complete"
   },
   "fields": {
+    "email": "Email",
     "firstName": "First Name",
     "lastName": "Last Name",
-    "email": "Email",
+    "name": "Name",
     "role": "Role"
   },
   "messages": {

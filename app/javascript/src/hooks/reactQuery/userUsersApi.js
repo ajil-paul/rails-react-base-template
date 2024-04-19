@@ -5,7 +5,7 @@ import { usersApi } from "apis/users";
 
 export const useFetchUsers = () =>
   useQuery({
-    queryKey: QUERY_KEYS.USERS,
+    queryKey: [QUERY_KEYS.USERS],
     queryFn: usersApi.fetch,
     select: data => data?.users,
   });

@@ -10,7 +10,10 @@ const App = () => (
     <ConfigProvider
       wave={{ disabled: true }}
       theme={{
-        token: { colorPrimary: "#5046e5" },
+        token: {
+          colorPrimary: "#5046e5",
+          fontFamily: "DM Sans",
+        },
         components: { Checkbox: { colorPrimary: "#5046e5" } },
       }}
     >
