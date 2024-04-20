@@ -6,7 +6,9 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :load_user!, only: %i[validate_otp resend_otp]
 
   def index
-    @users = policy_scope(User.includes(:role))
+    query = User.ransack(filter_params)
+    filtered_users = query.result(distinct: true).includes(:role)
+    @users = policy_scope(filtered_users)
   end
 
   def register
@@ -57,5 +59,12 @@ class Api::V1::UsersController < Api::V1::BaseController
       @user = User.find_by(email: user_params[:email])
 
       render_error(t("user.not_found")) unless @user.present?
+    end
+
+    def filter_params
+      params.permit(
+        [
+          :first_name_or_last_name_or_email_cont,
+        ])
     end
 end

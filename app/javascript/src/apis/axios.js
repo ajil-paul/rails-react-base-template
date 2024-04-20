@@ -1,4 +1,5 @@
 import axios from "axios";
+import qs from "qs";
 import { showSuccessToast } from "utils/notifications";
 
 const transformToCamelCase = data => {
@@ -57,6 +58,9 @@ export const initializeAxios = () => {
   axios.defaults.headers.common["X-CSRF-TOKEN"] = document.querySelector(
     "meta[name=csrf-token]"
   ).content;
+
+  axios.defaults.paramsSerializer = params =>
+    qs.stringify(params, { arrayFormat: "brackets" });
 
   registerInterceptors();
 };

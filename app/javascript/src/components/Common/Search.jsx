@@ -63,6 +63,7 @@ const Search = ({
 
   return (
     <Input
+      className="w-64"
       placeholder={t("actions.search")}
       prefix={<FiSearch className="text-gray-400" />}
       ref={inputRef}

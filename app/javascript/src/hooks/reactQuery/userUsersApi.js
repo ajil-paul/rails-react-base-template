@@ -1,11 +1,16 @@
 import { QUERY_KEYS } from "constants/queryKeys";
 
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { usersApi } from "apis/users";
 
-export const useFetchUsers = () =>
+const buildFilters = filters => ({
+  first_name_or_last_name_or_email_cont: filters.searchTerm,
+});
+
+export const useFetchUsers = ({ filters }) =>
   useQuery({
-    queryKey: [QUERY_KEYS.USERS],
-    queryFn: usersApi.fetch,
+    queryKey: [QUERY_KEYS.USERS, { filters }],
+    queryFn: () => usersApi.fetch(buildFilters(filters)),
     select: data => data?.users,
+    placeholderData: keepPreviousData,
   });

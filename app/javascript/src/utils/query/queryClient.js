@@ -37,7 +37,11 @@ const handleRetryDelay = (retryCount, error) => {
 const queryClient = new QueryClient({
   queryCache: new QueryCache({ onError: handleError }),
   defaultOptions: {
-    queries: { retry: handleRetry, retryDelay: handleRetryDelay },
+    queries: {
+      retry: handleRetry,
+      retryDelay: handleRetryDelay,
+      staleTime: 1000 * 60 * 5, // 5 minutes
+    },
   },
 });
 

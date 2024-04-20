@@ -4,6 +4,7 @@ import { Layout } from "antd";
 import Container from "components/Common/Container";
 import Header from "components/Common/Header";
 import PageLoader from "components/Common/PageLoader";
+import useQueryParams from "hooks/commons/useQueryParams";
 import { useTranslation } from "react-i18next";
 import { useFetchUsers } from "reactQuery/userUsersApi";
 
@@ -11,7 +12,13 @@ import Table from "./Table";
 
 const Users = () => {
   const { t } = useTranslation();
-  const { data: users = [], isLoading, isFetching } = useFetchUsers();
+  const filters = useQueryParams();
+
+  const {
+    data: users = [],
+    isLoading,
+    isFetching,
+  } = useFetchUsers({ filters });
 
   if (isLoading) return <PageLoader />;
 
