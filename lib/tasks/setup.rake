@@ -18,14 +18,14 @@ desc "Populates seed and sample data"
 task populate_base_data: [:environment] do
   create_permissions!
   create_roles!
-  create_oliver!
+  create_users!
 end
 
 private
 
 def create_permissions!
   puts "Creating permissions..."
-  permissions = YAML.safe_load(File.read(Rails.root.join("config", "permissions.yml")), symbolize_names: true)
+  permissions = YAML.safe_load(File.read(Rails.root.join("config", "seeds", "permissions.yml")), symbolize_names: true)
   permissions[:permissions].each do |permission|
     Permission.create(permission.to_h)
   end
@@ -33,7 +33,7 @@ end
 
 def create_roles!
   puts "Creating roles..."
-  roles = YAML.safe_load(File.read(Rails.root.join("config", "roles.yml")), symbolize_names: true)
+  roles = YAML.safe_load(File.read(Rails.root.join("config", "seeds", "roles.yml")), symbolize_names: true)
   roles[:roles].each do |role|
     permissions = role[:permissions]
     role = Role.create!(role.except(:permissions))
@@ -42,13 +42,11 @@ def create_roles!
   end
 end
 
-def create_oliver!
+def create_users!
   puts "Creating Oliver..."
-  User.create!(
-    first_name: "Oliver",
-    last_name: "Smith",
-    email: "oliver@example.com",
-    password: "Welcome@123",
-    role: Role.find_by!(name: "Admin"),
-  )
+  users = YAML.safe_load(File.read(Rails.root.join("config", "seeds", "users.yml")), symbolize_names: true)
+  users[:users].each do |user|
+    role = Role.find_by!(name: user[:role])
+    User.create!(user.except(:role).merge(role: ))
+  end
 end
