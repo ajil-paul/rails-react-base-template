@@ -1,7 +1,7 @@
-import { QUERY_KEYS } from "constants/queryKeys";
-
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
+
 import { usersApi } from "apis/users";
+import { QUERY_KEYS } from "constants/queryKeys";
 
 const buildFilters = filters => ({
   first_name_or_last_name_or_email_cont: filters.searchTerm,

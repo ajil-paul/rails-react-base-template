@@ -1,9 +1,9 @@
-import routes from "constants/routes";
-
 import React from "react";
 
 import { Breadcrumb, Layout, Typography } from "antd";
 import { RiHome3Line } from "react-icons/ri";
+
+import routes from "constants/routes";
 
 import Search from "./Search";
 

@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const buildPathGroupsBasedOnWebpackAliases = ({
   customJSRoot = "app/javascript/",
-  customAliasPath = "config/webpack/resolve.js",
+  customAliasPath = "resolve.js",
 }) => {
   const rootOfProject = __dirname + `/../../`;
 
@@ -37,7 +37,7 @@ const buildPathGroupsBasedOnWebpackAliases = ({
         : "/**";
 
     let group = "internal";
-    if (name === "neetoui") {
+    if (name === "antd") {
       group = "external";
     }
 

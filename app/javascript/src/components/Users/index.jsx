@@ -1,11 +1,12 @@
 import React from "react";
 
 import { Layout } from "antd";
+import { useTranslation } from "react-i18next";
+
 import Container from "components/Common/Container";
 import Header from "components/Common/Header";
 import PageLoader from "components/Common/PageLoader";
 import useQueryParams from "hooks/commons/useQueryParams";
-import { useTranslation } from "react-i18next";
 import { useFetchUsers } from "reactQuery/userUsersApi";
 
 import Table from "./Table";

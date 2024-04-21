@@ -1,10 +1,10 @@
-import routes from "constants/routes";
-
 import React from "react";
 
 import { Button, Form, Input } from "antd";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
+import routes from "constants/routes";
 
 import AccountLayout from "../AccountLayout";
 import { INITIAL_SIGNUP_FORM } from "../constants";

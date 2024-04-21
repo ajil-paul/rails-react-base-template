@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+
 import { parseQueryParams } from "utils/general";
 
 const useQueryParams = options => {

@@ -1,10 +1,10 @@
-import routes from "constants/routes";
-
 import React, { useEffect, useState } from "react";
 
 import { Form } from "antd";
 import { InputOTP } from "antd-input-otp";
 import { useTranslation } from "react-i18next";
+
+import routes from "constants/routes";
 import { useResendOtp, useVerifyOtp } from "reactQuery/useAuthApi";
 
 import AccountLayout from "../AccountLayout";

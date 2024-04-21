@@ -1,8 +1,8 @@
-import { resolve } from "path";
+const { resolve } = require("path");
 
 const root = resolve(__dirname, "app/javascript/src");
 
-export default {
+module.exports = {
   alias: {
     components: resolve(root, "components"),
     constants: resolve(root, "constants"),

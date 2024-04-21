@@ -1,9 +1,9 @@
-import routes from "constants/routes";
-
 import React from "react";
 
 import { Layout } from "antd";
 import { Navigate, Outlet } from "react-router-dom";
+
+import routes from "constants/routes";
 
 import Sidebar from "./Sidebar";
 

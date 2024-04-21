@@ -1,4 +1,5 @@
 import { QueryCache, QueryClient } from "@tanstack/react-query";
+
 import { showErrorToast } from "utils/notifications";
 
 const isUserOffline = () => !window.navigator.onLine;

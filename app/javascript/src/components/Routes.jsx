@@ -1,5 +1,3 @@
-import routes from "constants/routes";
-
 import React from "react";
 
 import {
@@ -7,6 +5,8 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
+
+import routes from "constants/routes";
 
 import Login from "./Account/Login";
 import SetupProfile from "./Account/SetupProfile";

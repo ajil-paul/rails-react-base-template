@@ -1,10 +1,10 @@
-import routes from "constants/routes";
-
 import React, { useState } from "react";
 
 import { Button, Input, Form, Checkbox } from "antd";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate } from "react-router-dom";
+
+import routes from "constants/routes";
 import { useLogin } from "reactQuery/useAuthApi";
 
 import AccountLayout from "./AccountLayout";

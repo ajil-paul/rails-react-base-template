@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+
 import { authApi } from "apis/auth";
 
 export const useCreateUser = () => useMutation({ mutationFn: authApi.signUp });

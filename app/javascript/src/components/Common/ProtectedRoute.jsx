@@ -1,8 +1,8 @@
-import routes from "constants/routes";
-
 import React from "react";
 
 import { Navigate, Outlet } from "react-router-dom";
+
+import routes from "constants/routes";
 
 const ProtectedRoute = () => {
   const user = window.userDetails;

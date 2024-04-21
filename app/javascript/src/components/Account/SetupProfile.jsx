@@ -1,11 +1,11 @@
-import routes from "constants/routes";
-
 import React, { useState } from "react";
 
 import { Input, Form, Button, Select } from "antd";
 import PhoneInput from "antd-phone-input";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router-dom";
+
+import routes from "constants/routes";
 import { useUpdateUser } from "reactQuery/useAuthApi";
 
 import AccountLayout from "./AccountLayout";
