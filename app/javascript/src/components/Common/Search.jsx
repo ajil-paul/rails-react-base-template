@@ -16,14 +16,15 @@ const Search = ({
   ...inputProps
 }) => {
   const { t } = useTranslation();
-  const queryParams = useQueryParams({ toCamelCase: false });
   const navigate = useNavigate();
-  const inputRef = useRef(null);
+  const queryParams = useQueryParams({ toCamelCase: false });
 
-  const [searchValue, setSearchValue] = useState(
-    queryParams?.[searchParamName] || ""
-  );
-  const isClearSearch = !!queryParams?.clear_search;
+  const defaultSearchValue = queryParams?.[searchParamName] || "";
+
+  const inputRef = useRef(null);
+  const filterRef = useRef(defaultSearchValue);
+
+  const [searchValue, setSearchValue] = useState(defaultSearchValue);
 
   const handleSearchQueryParams = trimmedValue => {
     if (!trimmedValue && !queryParams?.[searchParamName]) return;
@@ -36,6 +37,7 @@ const Search = ({
     if (trimmedValue) searchParams = { [searchParamName]: trimmedValue };
     else delete queryParams?.[searchParamName];
 
+    filterRef.current = trimmedValue;
     navigate(buildUrl(pathname, mergeLeft(searchParams, queryParams)));
   };
 
@@ -51,16 +53,11 @@ const Search = ({
   };
 
   useEffect(() => {
-    if (isClearSearch && inputRef.current) {
-      const pathname = window.location.pathname;
-
-      setSearchValue("");
-      delete queryParams?.[searchParamName];
-      delete queryParams?.clear_search;
-
-      navigate(buildUrl(pathname, queryParams));
-    }
-  }, [isClearSearch]);
+    const isFilterNull = !searchValue && !queryParams?.[searchParamName];
+    const isCyclicRender =
+      isFilterNull || filterRef.current === queryParams?.[searchParamName];
+    if (!isCyclicRender) setSearchValue(queryParams?.[searchParamName]);
+  }, [queryParams?.[searchParamName]]);
 
   return (
     <Input

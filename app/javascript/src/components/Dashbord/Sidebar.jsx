@@ -103,7 +103,8 @@ const Sidebar = () => {
         </div>
       </Sider>
       <Button
-        className="absolute z-10 border-none top-6 -right-12"
+        className="absolute z-10 top-6 -right-12"
+        type="text"
         icon={
           isCollapsed ? (
             <AiOutlineMenuUnfold size={18} />

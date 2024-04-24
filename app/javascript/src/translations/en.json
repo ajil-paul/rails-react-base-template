@@ -31,13 +31,18 @@
     "firstName": "First Name",
     "lastName": "Last Name",
     "name": "Name",
-    "role": "Role"
+    "role": "Role",
+    "nameOrEmail": "Name or email"
   },
   "messages": {
     "otpSend": "Enter the 6-digit verification code that was sent to your email address."
   },
+  "placeholders": {
+    "search": "Search {{what}}"
+  },
   "titles": {
-    "users": "Users"
+    "users": "Users",
+    "filters": "Filters"
   },
   "validations": {
     "invalid": "Invalid {{what}}",
