@@ -4,7 +4,8 @@ import { usersApi } from "apis/users";
 import { QUERY_KEYS } from "constants/queryKeys";
 
 const buildFilters = filters => ({
-  first_name_or_last_name_or_email_cont: filters.searchTerm,
+  full_name_or_email_cont: filters.searchTerm,
+  role_name_eq: filters.role,
 });
 
 export const useFetchUsers = ({ filters }) =>

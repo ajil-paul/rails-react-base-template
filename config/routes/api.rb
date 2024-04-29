@@ -9,5 +9,6 @@ namespace :api, defaults: { format: :json } do
       post :resend_otp, on: :collection
       put :update_profile, on: :collection
     end
+    resources :roles, only: %i[index]
   end
 end

@@ -38,7 +38,8 @@
     "otpSend": "Enter the 6-digit verification code that was sent to your email address."
   },
   "placeholders": {
-    "search": "Search {{what}}"
+    "search": "Search {{what}}",
+    "select": "Select {{what}}"
   },
   "titles": {
     "users": "Users",

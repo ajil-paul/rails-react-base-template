@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import Form from "./Form";
 
-const Filter = ({ isOpen, setIsOpen, formItems }) => {
+const Filter = ({ isOpen, setIsOpen, useFilterForm = () => [] }) => {
   const { t } = useTranslation();
 
   const onClose = () => setIsOpen(false);
@@ -17,7 +17,7 @@ const Filter = ({ isOpen, setIsOpen, formItems }) => {
       title={t("titles.filters")}
       onClose={() => setIsOpen(false)}
     >
-      <Form {...{ isOpen, onClose, formItems }} />
+      <Form {...{ isOpen, onClose, useFilterForm }} />
     </Drawer>
   );
 };

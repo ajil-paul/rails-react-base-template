@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 import useQueryParams from "hooks/commons/useQueryParams";
 import { buildUrl } from "utils/react/general";
 
-const Form = ({ onClose, formItems = [] }) => {
+const Form = ({ onClose, useFilterForm }) => {
   const navigate = useNavigate();
   const queryParams = useQueryParams({ toCamelCase: false });
   const [form] = AntdForm.useForm();
+
+  const formItems = useFilterForm();
 
   const pathname = window.location.pathname;
 

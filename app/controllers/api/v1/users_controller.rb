@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[register validate_otp resend_otp]
 
   before_action :load_user!, only: %i[validate_otp resend_otp]
 
@@ -64,7 +64,8 @@ class Api::V1::UsersController < Api::V1::BaseController
     def filter_params
       params.permit(
         [
-          :first_name_or_last_name_or_email_cont,
+          :full_name_or_email_cont,
+          :role_name_eq
         ])
     end
 end

@@ -13,4 +13,8 @@ class Role < ApplicationRecord
   def self.standard
     Role.find_by!(kind: "system", name: "Standard")
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name]
+  end
 end
